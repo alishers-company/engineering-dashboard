@@ -4,31 +4,270 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metric details — Engineering Dashboard</title>
-    <meta name="description" content="The dashboard helps teams track and optimize engineering performance metrics." />
+    <meta name="description" content="Track and optimize your engineering performance metrics with detailed insights and actionable data." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header data-testid="site-header">
-      <nav data-testid="primary-nav">
+    <header data-testid="site-header" class="navbar">
+      <nav data-testid="primary-nav" class="container">
         <span class="brand">Engineering Dashboard</span>
         <div class="nav-links">
-        <a href="./index.html" class="nav-link">Home</a>
-        <a href="./metric-details.html" class="nav-link active">Metric details</a>
-        <a href="./historical-trends.html" class="nav-link">Historical trends</a>
-        <a href="./metrics.html" class="nav-link">Metrics</a>
+          <a href="./index.html" class="nav-link">Home</a>
+          <a href="./metric-details.html" class="nav-link active">Metric details</a>
+          <a href="./historical-trends.html" class="nav-link">Historical trends</a>
+          <a href="./metrics.html" class="nav-link">Metrics</a>
         </div>
-        <button class="menu-toggle" data-testid="mobile-nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+        <button class="menu-toggle" data-testid="mobile-nav-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </header>
 
     <main data-testid="main-content" data-page="metric-details">
-      <h1>Metric details</h1>
-      <p>The dashboard helps teams track and optimize engineering performance metrics.</p>
-      <!-- GLM will implement the full Metric details page content -->
+      <section id="hero" class="hero reveal">
+        <div class="container">
+          <h1 class="gradient-text">Code Quality Metrics That Drive Excellence</h1>
+          <p class="text-lg">Gain deep insights into your engineering performance with detailed metrics and actionable data</p>
+          <div class="cta-buttons">
+            <a href="#code-quality" class="btn-primary">Explore Metrics</a>
+            <a href="#cta" class="btn-secondary">View Dashboard</a>
+          </div>
+        </div>
+        <div class="hero-orb"></div>
+      </section>
+
+      <section id="code-quality" class="section reveal">
+        <div class="container">
+          <div class="section-label">Code Quality Metrics</div>
+          <h2 class="section-title">Understand Your Engineering Performance</h2>
+          <p class="text-lg max-w-3xl">Our comprehensive metrics help you identify areas for improvement, track progress over time, and make data-driven decisions to enhance your team's productivity and code quality.</p>
+          
+          <div class="features-grid">
+            <div class="glass-card feature-card reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Code Complexity</h3>
+              <p class="text-muted">Measure cyclomatic complexity and identify overly complex functions that need refactoring</p>
+              <div class="metric-value">
+                <span class="metric-number">24</span>
+                <span class="metric-label">avg. complexity</span>
+              </div>
+              <div class="trend-indicator positive">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17l5-5 5 5"/>
+                </svg>
+                <span>12% improvement</span>
+              </div>
+            </div>
+
+            <div class="glass-card feature-card reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 11l3 3L22 4"/>
+                  <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Code Coverage</h3>
+              <p class="text-muted">Track test coverage across your codebase to ensure comprehensive testing</p>
+              <div class="metric-value">
+                <span class="metric-number">78%</span>
+                <span class="metric-label">line coverage</span>
+              </div>
+              <div class="trend-indicator positive">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17l5-5 5 5"/>
+                </svg>
+                <span>5% improvement</span>
+              </div>
+            </div>
+
+            <div class="glass-card feature-card reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Technical Debt</h3>
+              <p class="text-muted">Identify and track technical debt to prioritize refactoring efforts</p>
+              <div class="metric-value">
+                <span class="metric-number">42</span>
+                <span class="metric-label">debt items</span>
+              </div>
+              <div class="trend-indicator negative">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 7l10 10M17 7l-10 10"/>
+                </svg>
+                <span>3 items added</span>
+              </div>
+            </div>
+
+            <div class="glass-card feature-card reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Code Smells</h3>
+              <p class="text-muted">Detect code smells and anti-patterns that impact maintainability</p>
+              <div class="metric-value">
+                <span class="metric-number">18</span>
+                <span class="metric-label">smells detected</span>
+              </div>
+              <div class="trend-indicator neutral">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                </svg>
+                <span>stable</span>
+              </div>
+            </div>
+
+            <div class="glass-card feature-card reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Maintainability Index</h3>
+              <p class="text-muted">Calculate a maintainability score based on complexity, volume, and structure</p>
+              <div class="metric-value">
+                <span class="metric-number">72</span>
+                <span class="metric-label">out of 100</span>
+              </div>
+              <div class="trend-indicator positive">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17l5-5 5 5"/>
+                </svg>
+                <span>8 points gained</span>
+              </div>
+            </div>
+
+            <div class="glass-card feature-card reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Security Vulnerabilities</h3>
+              <p class="text-muted">Identify potential security risks in your codebase before they become issues</p>
+              <div class="metric-value">
+                <span class="metric-number">3</span>
+                <span class="metric-label">critical issues</span>
+              </div>
+              <div class="trend-indicator positive">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17l5-5 5 5"/>
+                </svg>
+                <span>5 issues resolved</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="metric-details reveal">
+            <h3 class="text-xl font-semibold mb-4">How Metrics Are Calculated</h3>
+            <div class="details-grid">
+              <div class="detail-card">
+                <h4 class="font-semibold">Code Complexity</h4>
+                <p>Measures the number of linearly independent paths through a program's source code. Lower complexity indicates more maintainable code.</p>
+              </div>
+              <div class="detail-card">
+                <h4 class="font-semibold">Code Coverage</h4>
+                <p>The percentage of your code that is executed when running tests. Higher coverage indicates more robust testing.</p>
+              </div>
+              <div class="detail-card">
+                <h4 class="font-semibold">Technical Debt</h4>
+                <p>Estimated effort required to refactor and improve code quality. Lower technical debt indicates a healthier codebase.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="section reveal">
+        <div class="container">
+          <div class="cta-content">
+            <div class="cta-text">
+              <div class="section-label">Ready to Improve Your Code Quality?</div>
+              <h2 class="section-title">Start Tracking Your Metrics Today</h2>
+              <p class="text-lg max-w-2xl">Join thousands of engineering teams using our dashboard to identify improvement opportunities, track progress, and make data-driven decisions.</p>
+              <div class="cta-buttons">
+                <a href="#" class="btn-primary">Get Started Free</a>
+                <a href="#" class="btn-secondary">Schedule Demo</a>
+              </div>
+            </div>
+            <div class="cta-visual">
+              <div class="mock-dashboard">
+                <div class="dashboard-header">
+                  <div class="dashboard-title">Engineering Dashboard</div>
+                  <div class="dashboard-time">Last updated: Today, 10:30 AM</div>
+                </div>
+                <div class="dashboard-metrics">
+                  <div class="metric-box">
+                    <div class="metric-label">Code Quality Score</div>
+                    <div class="metric-score">82<span class="metric-unit">/100</span></div>
+                  </div>
+                  <div class="metric-box">
+                    <div class="metric-label">Test Coverage</div>
+                    <div class="metric-score">78<span class="metric-unit">%</span></div>
+                  </div>
+                  <div class="metric-box">
+                    <div class="metric-label">Technical Debt</div>
+                    <div class="metric-score">42<span class="metric-unit">items</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer data-testid="footer-section">
-      <p>&copy; Engineering Dashboard</p>
+    <footer data-testid="footer-section" class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3 class="footer-title">Engineering Dashboard</h3>
+            <p class="text-muted">Helping teams track and optimize engineering performance metrics.</p>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-heading">Product</h4>
+            <ul class="footer-links">
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Integrations</a></li>
+              <li><a href="#">API</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-heading">Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-heading">Company</h4>
+            <ul class="footer-links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 Engineering Dashboard. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="./script.js"></script>
