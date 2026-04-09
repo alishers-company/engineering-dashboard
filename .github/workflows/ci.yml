@@ -1,0 +1,34 @@
+name: Interactive UI CI
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  verify-interactive-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check entrypoints
+        run: |
+          test -f index.html
+          test -f metric-details.html
+          test -f historical-trends.html
+          test -f metrics.html
+          test -f styles.css
+          test -f script.js
+      - name: Check linked assets
+        run: |
+          grep -q 'href="./styles.css"' index.html
+          grep -q 'src="./script.js"' index.html
+          grep -q 'href="./styles.css"' metric-details.html
+          grep -q 'src="./script.js"' metric-details.html
+          grep -q 'href="./styles.css"' historical-trends.html
+          grep -q 'src="./script.js"' historical-trends.html
+          grep -q 'href="./styles.css"' metrics.html
+          grep -q 'src="./script.js"' metrics.html
+          grep -q 'data-testid="main-content"' index.html
