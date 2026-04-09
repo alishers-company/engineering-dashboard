@@ -5,30 +5,367 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metrics — Engineering Dashboard</title>
     <meta name="description" content="The dashboard helps teams track and optimize engineering performance metrics." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header data-testid="site-header">
+    <header data-testid="site-header" class="navbar">
       <nav data-testid="primary-nav">
         <span class="brand">Engineering Dashboard</span>
         <div class="nav-links">
-        <a href="./index.html" class="nav-link">Home</a>
-        <a href="./metric-details.html" class="nav-link">Metric details</a>
-        <a href="./historical-trends.html" class="nav-link">Historical trends</a>
-        <a href="./metrics.html" class="nav-link active">Metrics</a>
+          <a href="./index.html" class="nav-link">Home</a>
+          <a href="./metric-details.html" class="nav-link">Metric details</a>
+          <a href="./historical-trends.html" class="nav-link">Historical trends</a>
+          <a href="./metrics.html" class="nav-link active">Metrics</a>
         </div>
         <button class="menu-toggle" data-testid="mobile-nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
       </nav>
     </header>
 
     <main data-testid="main-content" data-page="metrics">
-      <h1>Metrics</h1>
-      <p>The dashboard helps teams track and optimize engineering performance metrics.</p>
-      <!-- GLM will implement the full Metrics page content -->
+      <section id="hero" class="hero reveal">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Engineering Metrics Dashboard</h1>
+            <p class="hero-subtitle">Track, analyze, and optimize your team's performance with comprehensive engineering metrics</p>
+            <div class="hero-cta">
+              <a href="#test-coverage" class="btn-primary">Explore Metrics</a>
+              <a href="#code-quality" class="btn-secondary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-orb"></div>
+      </section>
+
+      <section id="test-coverage" class="section reveal">
+        <div class="container">
+          <div class="section-label">Test Coverage</div>
+          <h2 class="section-title">Comprehensive Test Coverage Analysis</h2>
+          <p class="section-description">Monitor your test coverage across all modules and test types to ensure code quality and reliability.</p>
+          
+          <div class="glass-card coverage-overview">
+            <div class="coverage-stats">
+              <div class="stat-item">
+                <div class="stat-value">87%</div>
+                <div class="stat-label">Overall Coverage</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">92%</div>
+                <div class="stat-label">Unit Tests</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">78%</div>
+                <div class="stat-label">Integration Tests</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">65%</div>
+                <div class="stat-label">E2E Tests</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="coverage-charts">
+            <div class="glass-card module-coverage">
+              <h3>Coverage by Module</h3>
+              <div class="chart-container">
+                <div class="bar-chart">
+                  <div class="bar-item">
+                    <div class="bar-label">Authentication</div>
+                    <div class="bar-wrapper">
+                      <div class="bar" style="width: 95%"></div>
+                      <div class="bar-value">95%</div>
+                    </div>
+                  </div>
+                  <div class="bar-item">
+                    <div class="bar-label">API Gateway</div>
+                    <div class="bar-wrapper">
+                      <div class="bar" style="width: 88%"></div>
+                      <div class="bar-value">88%</div>
+                    </div>
+                  </div>
+                  <div class="bar-item">
+                    <div class="bar-label">Data Processing</div>
+                    <div class="bar-wrapper">
+                      <div class="bar" style="width: 82%"></div>
+                      <div class="bar-value">82%</div>
+                    </div>
+                  </div>
+                  <div class="bar-item">
+                    <div class="bar-label">UI Components</div>
+                    <div class="bar-wrapper">
+                      <div class="bar" style="width: 75%"></div>
+                      <div class="bar-value">75%</div>
+                    </div>
+                  </div>
+                  <div class="bar-item">
+                    <div class="bar-label">Database Layer</div>
+                    <div class="bar-wrapper">
+                      <div class="bar" style="width: 70%"></div>
+                      <div class="bar-value">70%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card test-type-coverage">
+              <h3>Coverage by Test Type</h3>
+              <div class="chart-container">
+                <div class="pie-chart">
+                  <div class="pie-segment" style="--percentage: 45; --color: var(--accent)">
+                    <span>Unit Tests</span>
+                  </div>
+                  <div class="pie-segment" style="--percentage: 30; --color: var(--accent-light)">
+                    <span>Integration Tests</span>
+                  </div>
+                  <div class="pie-segment" style="--percentage: 15; --color: var(--muted)">
+                    <span>E2E Tests</span>
+                  </div>
+                  <div class="pie-segment" style="--percentage: 10; --color: var(--border)">
+                    <span>Other</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="code-quality" class="section reveal">
+        <div class="container">
+          <div class="section-label">Code Quality</div>
+          <h2 class="section-title">Code Quality Metrics</h2>
+          <p class="section-description">Track and improve your code quality with comprehensive metrics and visual indicators.</p>
+          
+          <div class="quality-metrics">
+            <div class="glass-card metric-card">
+              <div class="metric-header">
+                <div class="metric-icon">📊</div>
+                <h3>Cyclomatic Complexity</h3>
+              </div>
+              <div class="metric-value">Medium</div>
+              <div class="metric-trend positive">
+                <span>↓ 12% from last month</span>
+              </div>
+              <div class="metric-details">
+                <div class="progress-bar">
+                  <div class="progress" style="width: 65%"></div>
+                </div>
+                <div class="metric-description">Average complexity per function is within acceptable range</div>
+              </div>
+            </div>
+
+            <div class="glass-card metric-card">
+              <div class="metric-header">
+                <div class="metric-icon">🔍</div>
+                <h3>Code Duplication</h3>
+              </div>
+              <div class="metric-value">Low</div>
+              <div class="metric-trend negative">
+                <span>↑ 3% from last month</span>
+              </div>
+              <div class="metric-details">
+                <div class="progress-bar">
+                  <div class="progress" style="width: 25%"></div>
+                </div>
+                <div class="metric-description">5.2% of code is duplicated across the codebase</div>
+              </div>
+            </div>
+
+            <div class="glass-card metric-card">
+              <div class="metric-header">
+                <div class="metric-icon">📝</div>
+                <h3>Documentation Coverage</h3>
+              </div>
+              <div class="metric-value">High</div>
+              <div class="metric-trend positive">
+                <span>↑ 8% from last month</span>
+              </div>
+              <div class="metric-details">
+                <div class="progress-bar">
+                  <div class="progress" style="width: 85%"></div>
+                </div>
+                <div class="metric-description">85% of public APIs are documented with examples</div>
+              </div>
+            </div>
+
+            <div class="glass-card metric-card">
+              <div class="metric-header">
+                <div class="metric-icon">⚡</div>
+                <h3>Performance Score</h3>
+              </div>
+              <div class="metric-value">Good</div>
+              <div class="metric-trend neutral">
+                <span>→ No change from last month</span>
+              </div>
+              <div class="metric-details">
+                <div class="progress-bar">
+                  <div class="progress" style="width: 78%"></div>
+                </div>
+                <div class="metric-description">API response times are within SLA thresholds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="defect-density" class="section reveal">
+        <div class="container">
+          <div class="section-label">Defect Tracking</div>
+          <h2 class="section-title">Defect Density Analysis</h2>
+          <p class="section-description">Monitor and track defect density across your codebase to identify areas for improvement.</p>
+          
+          <div class="glass-card defect-trend">
+            <h3>Defect Density Trend (Last 6 Months)</h3>
+            <div class="trend-chart">
+              <div class="chart-line">
+                <div class="data-point" style="--value: 3.2; --month: Jan"></div>
+                <div class="data-point" style="--value: 2.8; --month: Feb"></div>
+                <div class="data-point" style="--value: 2.5; --month: Mar"></div>
+                <div class="data-point" style="--value: 2.1; --month: Apr"></div>
+                <div class="data-point" style="--value: 1.9; --month: May"></div>
+                <div class="data-point" style="--value: 1.6; --month: Jun"></div>
+              </div>
+              <div class="trend-info">
+                <div class="trend-stat">
+                  <div class="stat-value">1.6</div>
+                  <div class="stat-label">Current Defect Density</div>
+                </div>
+                <div class="trend-stat">
+                  <div class="stat-value">50%</div>
+                  <div class="stat-label">Improvement</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="defect-breakdown">
+            <div class="glass-card severity-breakdown">
+              <h3>Defects by Severity</h3>
+              <div class="severity-chart">
+                <div class="severity-item critical">
+                  <div class="severity-label">Critical</div>
+                  <div class="severity-count">2</div>
+                  <div class="severity-bar">
+                    <div class="severity-fill" style="width: 10%"></div>
+                  </div>
+                </div>
+                <div class="severity-item high">
+                  <div class="severity-label">High</div>
+                  <div class="severity-count">5</div>
+                  <div class="severity-bar">
+                    <div class="severity-fill" style="width: 25%"></div>
+                  </div>
+                </div>
+                <div class="severity-item medium">
+                  <div class="severity-label">Medium</div>
+                  <div class="severity-count">12</div>
+                  <div class="severity-bar">
+                    <div class="severity-fill" style="width: 60%"></div>
+                  </div>
+                </div>
+                <div class="severity-item low">
+                  <div class="severity-label">Low</div>
+                  <div class="severity-count">8</div>
+                  <div class="severity-bar">
+                    <div class="severity-fill" style="width: 40%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card defect-categories">
+              <h3>Defect Categories</h3>
+              <div class="category-list">
+                <div class="category-item">
+                  <div class="category-icon">🐛</div>
+                  <div class="category-info">
+                    <div class="category-name">Functional Bugs</div>
+                    <div class="category-count">15</div>
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">🔧</div>
+                  <div class="category-info">
+                    <div class="category-name">Performance Issues</div>
+                    <div class="category-count">7</div>
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">🔒</div>
+                  <div class="category-info">
+                    <div class="category-name">Security Vulnerabilities</div>
+                    <div class="category-count">3</div>
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">📱</div>
+                  <div class="category-info">
+                    <div class="category-name">UI/UX Issues</div>
+                    <div class="category-count">6</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="section reveal">
+        <div class="container">
+          <div class="glass-card cta-content">
+            <h2>Ready to Optimize Your Engineering Metrics?</h2>
+            <p>Get deeper insights into your team's performance with our comprehensive dashboard and analytics tools.</p>
+            <div class="cta-buttons">
+              <a href="#test-coverage" class="btn-primary">Explore Metrics</a>
+              <a href="#" class="btn-secondary">Request Demo</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer data-testid="footer-section">
-      <p>&copy; Engineering Dashboard</p>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Engineering Dashboard</h3>
+            <p>Track, analyze, and optimize your team's performance with comprehensive engineering metrics.</p>
+          </div>
+          <div class="footer-column">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Integrations</a></li>
+              <li><a href="#">API Documentation</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 Engineering Dashboard. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="./script.js"></script>
