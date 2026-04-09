@@ -1,107 +1,222 @@
-:root {
-  /* ── Core palette ── */
-  --bg: #f3f6fb;
-  --surface: #ffffff;
-  --accent: #2563eb;
-  --text: #0f172a;
-  --accent-light: color-mix(in srgb, var(--accent) 12%, transparent);
-  --accent-hover: color-mix(in srgb, var(--accent) 85%, #000);
-  --muted: color-mix(in srgb, var(--text) 55%, transparent);
-  --border: color-mix(in srgb, var(--text) 8%, transparent);
-  --border-hover: color-mix(in srgb, var(--text) 16%, transparent);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Dashboard - Track and Optimize Performance Metrics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <nav class="navbar" data-testid="primary-nav">
+      <div class="container">
+        <div class="brand">Engineering Dashboard</div>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="metric-details.html" class="nav-link">Metric Details</a>
+          <a href="historical-trends.html" class="nav-link">Historical Trends</a>
+          <a href="metrics.html" class="nav-link">Metrics</a>
+        </div>
+      </div>
+    </nav>
 
-  /* ── Spacing scale ── */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-2xl: 48px;
-  --space-3xl: 64px;
-  --space-4xl: 96px;
+    <main>
+      <section id="hero-section" class="hero reveal">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Track and Optimize Engineering Performance</h1>
+            <p class="hero-subtitle">Data-driven insights to improve code quality, reduce defects, and increase test coverage across your development teams.</p>
+            <div class="hero-cta">
+              <button class="btn-primary">Get Started</button>
+              <button class="btn-secondary">View Demo</button>
+            </div>
+          </div>
+        </div>
+        <div class="hero-graphic">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+        </div>
+      </section>
 
-  /* ── Typography scale (fluid) ── */
-  --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
-  --text-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.875rem);
-  --text-base: clamp(0.9rem, 0.85rem + 0.3vw, 1rem);
-  --text-lg: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem);
-  --text-xl: clamp(1.25rem, 1rem + 1.1vw, 1.75rem);
-  --text-2xl: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
-  --text-3xl: clamp(1.8rem, 1.2rem + 2.8vw, 3rem);
-  --text-4xl: clamp(2.2rem, 1.3rem + 4vw, 4rem);
-  --text-hero: clamp(2.5rem, 1.5rem + 5vw, 5rem);
+      <section id="who-it-is-for" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-label">Who It's For</div>
+            <h2 class="section-title">Engineering Teams That Demand Excellence</h2>
+            <p class="section-description">Built specifically for development leaders who need actionable insights to drive quality and efficiency.</p>
+          </div>
+          
+          <div class="features-grid">
+            <div class="feature-card glass-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7V12C2 16.5 4.23 20.68 7.62 23.15L12 24L16.38 23.15C19.77 20.68 22 16.5 22 12V7L12 2Z" fill="currentColor"/>
+                  <path d="M12 7V12L16 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Engineering Managers</h3>
+              <p>Track team performance, identify bottlenecks, and make data-driven decisions to improve development velocity.</p>
+            </div>
+            
+            <div class="feature-card glass-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7V12C2 16.5 4.23 20.68 7.62 23.15L12 24L16.38 23.15C19.77 20.68 22 16.5 22 12V7L12 2Z" fill="currentColor"/>
+                  <path d="M12 7V12L8 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Team Leads</h3>
+              <p>Monitor code quality metrics, track defect density, and ensure consistent standards across your development teams.</p>
+            </div>
+            
+            <div class="feature-card glass-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7V12C2 16.5 4.23 20.68 7.62 23.15L12 24L16.38 23.15C19.77 20.68 22 16.5 22 12V7L12 2Z" fill="currentColor"/>
+                  <path d="M12 7V12L16 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>QA Teams</h3>
+              <p>Visualize test coverage trends, identify regression patterns, and collaborate with developers to improve quality.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  /* ── Shadows ── */
-  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04);
-  --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
-  --shadow-xl: 0 20px 50px -5px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.04);
-  --shadow-glow: 0 0 20px color-mix(in srgb, var(--accent) 25%, transparent);
+      <section id="metrics-overview" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-label">Key Metrics</div>
+            <h2 class="section-title">Comprehensive Engineering Insights</h2>
+            <p class="section-description">Monitor the critical indicators that drive software quality and team performance.</p>
+          </div>
+          
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-icon code-quality"></div>
+              <h3>Code Quality</h3>
+              <p class="metric-value">87%</p>
+              <p class="metric-trend positive">↑ 5% from last month</p>
+            </div>
+            
+            <div class="metric-card">
+              <div class="metric-icon defect-density"></div>
+              <h3>Defect Density</h3>
+              <p class="metric-value">0.8 per KLOC</p>
+              <p class="metric-trend negative">↑ 0.2 from last month</p>
+            </div>
+            
+            <div class="metric-card">
+              <div class="metric-icon test-coverage"></div>
+              <h3>Test Coverage</h3>
+              <p class="metric-value">78%</p>
+              <p class="metric-trend positive">↑ 12% from last month</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  /* ── Radii ── */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-full: 9999px;
+      <section id="testimonials" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-label">Trusted by Leading Teams</div>
+            <h2 class="section-title">What Engineering Leaders Say</h2>
+          </div>
+          
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>"The Engineering Dashboard transformed how we track quality metrics. Our defect rate dropped by 40% in just three months."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar"></div>
+                <div class="author-info">
+                  <h4>Sarah Johnson</h4>
+                  <p>VP of Engineering, TechCorp</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>"Finally, a dashboard that gives us actionable insights instead of just raw data. Our team velocity has never been higher."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar"></div>
+                <div class="author-info">
+                  <h4>Michael Chen</h4>
+                  <p>Engineering Director, InnovateCo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  /* ── Transitions ── */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --duration-slow: 400ms;
-}
+      <section id="cta-section" class="section reveal">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to Transform Your Engineering Performance?</h2>
+            <p>Join hundreds of engineering teams using data to drive quality and efficiency.</p>
+            <div class="cta-buttons">
+              <button class="btn-primary">Start Free Trial</button>
+              <button class="btn-secondary">Schedule Demo</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-/* ── Reset ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h3>Engineering Dashboard</h3>
+            <p>Track and optimize engineering performance metrics</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Product</h4>
+              <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Integrations</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Changelog</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">API Reference</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 Engineering Dashboard. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-/* ── Animation keyframes library ── */
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-@keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
-/* ── Scroll-reveal class (JS adds .is-visible) ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out);
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── Minimal structural styles (GLM replaces everything below) ── */
-nav { display: flex; align-items: center; justify-content: space-between; padding: var(--space-md) var(--space-xl); background: var(--surface); }
-.brand { font-weight: 700; font-size: var(--text-lg); letter-spacing: -0.02em; }
-.nav-links { display: flex; gap: var(--space-md); }
-.nav-link { text-decoration: none; color: var(--text); font-size: var(--text-sm); font-weight: 500; transition: color var(--duration-fast); }
-.nav-link:hover { color: var(--accent); }
-.nav-link.active { color: var(--accent); font-weight: 600; }
-.menu-toggle { display: none; background: none; border: 1px solid var(--border); padding: var(--space-xs) var(--space-sm); cursor: pointer; font-size: var(--text-lg); border-radius: var(--radius-sm); }
-main { padding: var(--space-xl); }
-footer { padding: var(--space-md) var(--space-xl); text-align: center; border-top: 1px solid var(--border); margin-top: var(--space-2xl); }
-@media (max-width: 768px) {
-  .menu-toggle { display: block; }
-  .nav-links { display: none; }
-  .nav-links.open { display: flex; flex-direction: column; }
-}
+  <script src="./script.js"></script>
+</body>
+</html>
